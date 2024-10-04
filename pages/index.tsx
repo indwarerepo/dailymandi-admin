@@ -3,7 +3,7 @@ import { useTheme } from 'next-themes';
 import { MoonStar, SunIcon } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import logo from '../public/images/logo.png';
+import logo from '../public/images/Frame 14.png';
 import logoDark from '../public/images/logo-bl.png';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -52,7 +52,7 @@ export default function AuthenticationPage() {
                         </div>
                         <div className="foot px-10 py-5 bg-[var(--green-bg-ind)] hidden sm:block">
                             <p className="text-sm font-ight text-[var(--green-text-ind)]">
-                                © 2024 Aonemart. All Rights Reserved
+                                © 2024 DailyMandi. All Rights Reserved
                             </p>
                         </div>
                     </div>
@@ -61,7 +61,7 @@ export default function AuthenticationPage() {
                     <div className="flex flex-col justify-center items-center h-full">
                         <Card className="w-full sm:w-[28rem] border-[1px] shadow-none p-7 sm:px-10 sm:py-9">
                             <CardHeader>
-                                <CardTitle className="text-2xl sm:text-3xl mb-1">Welcome to Aonemart</CardTitle>
+                                <CardTitle className="text-2xl sm:text-3xl mb-1">Welcome to DailyMandi</CardTitle>
                                 <CardDescription className="text-sm sm:text-base ">
                                     Sign in by entering information below
                                 </CardDescription>
