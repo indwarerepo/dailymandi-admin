@@ -1,0 +1,25 @@
+.skiptranslate {
+  iframe {
+    display: none;
+  }
+  span {
+    a {
+      display: none;
+    }
+  }
+}
+
+.field_inputtext {
+  display: flex;
+  flex-direction: "row";
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+}
+.field_checkbox {
+  display: flex;
+  flex-direction: "row";
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+}

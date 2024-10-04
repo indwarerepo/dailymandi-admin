@@ -1,0 +1,234 @@
+.layout-menu {
+  margin: 0;
+  padding: 0rem 1rem;
+  list-style-type: none;
+  user-select: none;
+// li ul.active-menuitem{ box-shadow: 0 4px 10px rgba(0, 0, 0, .05) !important; background: var(--workspaceColor1); border-radius: 10px;
+// }
+// li ul li.active-menuitem{ background: var(--workspaceColor1); border-radius: 10px;
+// }
+.active-menuitem .active-route{background-color: var(--workspaceColor1); color:var(--workspaceColor2);}
+.active-menuitem ul li ul li a:hover{background-color: var(--workspaceColor1); color:var(--workspaceColor2);}
+.active-menuitem ul li a:hover{background-color: var(--workspaceColor1); color:var(--workspaceColor2);}
+li ul li:hover{   border-radius: 10px; }
+  .layout-root-menuitem {
+    > .layout-menuitem-root-text {
+      font-size: 0.857rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--foreground);
+      margin: 0.75rem 0;
+    }
+
+    > a {
+      display: none;
+    }
+  }
+
+  li.active-menuitem {
+    
+    > a {
+      .layout-submenu-toggler {
+        transform: rotate(90deg);
+      }
+    }
+
+    > ul {
+      max-height: auto;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    a {
+      display: flex;
+      align-items: center;
+      position: relative;
+      outline: 0 none;
+      color: var(--workspaceColor1);
+      cursor: pointer;
+      padding:0.88rem 0.88rem;
+      border-radius: 9px;
+      transition: background-color $transitionDuration,
+        box-shadow $transitionDuration;
+      font-size: 14px;
+      margin-bottom: 8px;
+      
+
+      .layout-menuitem-icon {
+        margin-right: 1rem;
+        margin-left: 0.4rem;
+      }
+
+      .layout-submenu-toggler {
+        font-size: 75%;
+        transition: transform $transitionDuration;
+      }
+
+      &.rotated-icon {
+        .layout-menuitem-icon {
+          transform: rotate(90deg);
+        }
+      }
+
+      &.active-route {
+        span {
+          font-weight: 400;
+          // color: var(--workspaceColor2)
+          // background-color: var(--app-bg-color);
+        }
+      }
+
+      &.dis-hidden {
+        display: none;
+      }
+
+      &:hover {
+        span {
+          font-weight: 400;
+          // color: var(--app-bg-color);
+          // background-color: var(--app-bg-color);
+        }
+
+        .badge_style {
+          background-color: var(--app-white-color);
+          color: var(--app-bg-color);
+          margin-left: auto;
+        }
+      }
+      .badge_style {
+        background-color: var(--app-bg-color);
+        border-radius: 5px;
+        padding: 3px 8px;
+        color: var(--app-white-color);
+        margin-left: auto;
+      }
+
+      &:focus {
+        outline: 0 none;
+        outline-offset: 0;
+        transition: box-shadow 0.2s;
+        box-shadow: inset var(--app-bg-color);
+      }
+    }
+
+    ul {
+      overflow: hidden;
+      max-height: 0;
+      border-radius: $borderRadius;
+
+      li {
+        a {
+          margin-left: 1rem;
+        }
+
+        li {
+          a {
+            margin-left: 2rem;
+          }
+
+          li {
+            a {
+              margin-left: 2.5rem;
+            }
+
+            li {
+              a {
+                margin-left: 3rem;
+              }
+
+              li {
+                a {
+                  margin-left: 3.5rem;
+                }
+
+                li {
+                  a {
+                    margin-left: 4rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.layout-submenu-enter-active {
+  max-height: 1000px !important;
+  transition: max-height 1s ease-in-out;
+}
+
+.layout-submenu-enter-done {
+  max-height: 1000px !important;
+}
+
+.layout-submenu-exit {
+  max-height: 1000px !important;
+}
+
+.layout-submenu-exit-active {
+  overflow: hidden;
+  max-height: 0 !important;
+  transition: max-height 0.45s cubic-bezier(0, 1, 0, 1);
+}
+
+.menu-icon {
+  z-index: 100;
+}
+
+.parent-workspace-icon {
+  outline: 2px solid var(--workspaceColor1);
+  outline-offset: 2px;
+  background-image: linear-gradient(
+    var(--workspaceColor1),
+    var(--workspaceColor2)
+  );
+  color: #fff;
+
+  width: 2.2rem;
+  height: 2rem;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 600;
+}
+
+.workspace-icon {
+  outline-offset: 2px;
+  outline: 2px solid;
+  width: 2.2rem;
+  height: 2rem;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 600;
+}
+
+.big-workspace-icon {
+  outline-offset: 2px;
+  outline: 2px solid;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-transform: uppercase;
+
+  font-weight: 600;
+  font-size: 16px;
+}

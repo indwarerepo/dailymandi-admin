@@ -1,0 +1,70 @@
+
+.main-body {
+  max-width: 500px;
+  width: 100%;
+  @media (max-width: 480px) {
+    width: 95%;
+    max-width:95%;
+  }
+}
+
+.auth-bg-image {
+  background-image: url("../../public/images/bg1.png");
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: bottom left;
+  background-repeat: no-repeat;
+}
+
+.authCardContainer {
+  box-shadow: 0px 0px 35px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 10px;
+  min-height: 50vh;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo_image {
+  margin: auto;
+}
+.custom_otp_input {
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  background-color: transparent;
+  margin: 10px;
+  outline: none;
+  height: 2.5em !important;
+  width: 2.5em !important;
+  text-align: center;
+}
+
+@media (max-width: 1250px) {
+  .auth-bg-image {
+    height:100vh;
+    width: 100%;
+    background-size: contain;
+    background-position: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .authCardContainer {
+    padding: 30px !important;
+    width: 80vw !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .authCardContainer {
+    padding:25px!important;
+    width: 100%!important;
+  }
+  .container {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
