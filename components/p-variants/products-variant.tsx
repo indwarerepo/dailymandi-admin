@@ -282,7 +282,7 @@ export const VariantColumns: ColumnDef<any>[] = [
                     onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
                     className="w-full items-center justify-start"
                 >
-                    Is Returnable?
+                    Returnable
                     <ArrowUpDown className="ml-2 h-4 w-4" />
                 </Button>
             );
@@ -351,7 +351,7 @@ export const VariantColumns: ColumnDef<any>[] = [
                     onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
                     className="w-full items-center justify-start"
                 >
-                    MFG Date
+                    Mfg. Date
                     <ArrowUpDown className="ml-2 h-4 w-4" />
                 </Button>
             );
@@ -373,7 +373,7 @@ export const VariantColumns: ColumnDef<any>[] = [
                     onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
                     className="w-full items-center justify-start"
                 >
-                    EXP Date
+                    Exp. Date
                     <ArrowUpDown className="ml-2 h-4 w-4" />
                 </Button>
             );

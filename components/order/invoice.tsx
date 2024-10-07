@@ -21,7 +21,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { IOrder } from '@/types/interfaces/order';
 import { toast } from 'sonner';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui/table';
-import logoInvoice from '@/public/images/Frame 14.png';
+import logoInvoice from '@/public/images/logo.png';
 import { format } from 'date-fns';
 import moment from 'moment';
 
@@ -123,7 +123,7 @@ const Invoice: React.FC<DetailProps> = ({ orderData }: DetailProps) => {
                                 PIN Code: <span>{orderData?.deliveryPincode}</span>
                             </h3>
                             <p className="text-center text-sm">
-                                DailyMandi
+                                Aonemart
                                 <br />
                                 Maple Heights
                                 <br />
@@ -249,7 +249,7 @@ const Invoice: React.FC<DetailProps> = ({ orderData }: DetailProps) => {
                             </p>
                         </div>
                         <CardFooter className="flex flex-col justify-center items-center p-2 bg-green-100">
-                            <p className="text-sm ">Thank you for using DailyMandi.</p>
+                            <p className="text-sm ">Thank you for using Aonemart.</p>
                         </CardFooter>
                     </Card>
                 </div>

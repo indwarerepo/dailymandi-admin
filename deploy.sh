@@ -15,8 +15,8 @@ if npm run build; then
   
   echo "<<<<<<<<<<<<<<<<<<< [+] Restart app using pm2 >>>>>>>>>>>>>>>"
   # deploy application
-  pm2 delete "aone-admin"
-  pm2 start npm --name "aone-admin" -- start
+  pm2 delete "dailymandi-admin"
+  pm2 start npm --name "dailymandi-admin" -- start
 else
   echo "Build failed, deployment aborted."
 fi

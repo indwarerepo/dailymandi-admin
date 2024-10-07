@@ -55,6 +55,14 @@ export const orderDeliveryApi = createApi({
             }),
             invalidatesTags: ['OrderDelivery'],
         }),
+        updateOrderDeliveryReturn: builder.mutation<any, any>({
+            query: ({ id, ...rest }) => ({
+                url: `/driver/return-order/${id}`,
+                method: 'PUT',
+                body: rest,
+            }),
+            invalidatesTags: ['OrderDelivery'],
+        }),
         deliveryOTPVerification: builder.mutation<ApiResponse, any>({
             query: ({ id, ...rest }) => ({
                 url: `/driver/delivery/${id}`,
@@ -112,5 +120,6 @@ export const {
     useGetAllOrderDeliverylistQuery,
     useGetOrderDeliveryDetailsByIdQuery,
     useUpdateOrderDeliveryStatusMutation,
+    useUpdateOrderDeliveryReturnMutation,
     useDeliveryOTPVerificationMutation,
 } = orderDeliveryApi;

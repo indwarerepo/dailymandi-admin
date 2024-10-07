@@ -26,7 +26,7 @@ const TaxProductDropdown = ({ onChange, taxId, name }: VarienDropdownProps) => {
             <PopoverTrigger asChild>
                 <Button
                     variant="outline"
-                    className="w-full  text-xs sm:text-sm font-normal flex justify-between items-center bg-transparent border"
+                    className="w-full  text-xs font-normal flex justify-between items-center bg-transparent border"
                     role="combobox"
                     aria-expanded={open}
                 >

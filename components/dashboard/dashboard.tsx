@@ -28,7 +28,7 @@ const chartConfig = {
 const Dashboard = () => {
     return (
         <div className="w-[100%] flex flex-col gap-8">
-            <div>{/* <p className="text-sm mb-0">Welcome to DailyMandi Admin</p> */}</div>
+            <div>{/* <p className="text-sm mb-0">Welcome to Aonemart Admin</p> */}</div>
             <div className="grid grid-cols-2 gap-x-6 sm:grid-cols-6">
                 <Card className="w-full p-8 shadow-md hover:shadow ">
                     <CardHeader className=" p-1 mb-5 w-10 h-10 bg-[#f5f5f5] rounded-md">

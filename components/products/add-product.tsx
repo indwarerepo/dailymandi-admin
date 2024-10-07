@@ -268,7 +268,7 @@ const AddProductComponent = ({ selectedProducts, productId, isUpdate }: props) =
     return (
         <>
             {/* Form Start ==================== */}
-            <Card className="w-full px-8 py-8 cus-form max-[500px]:px-6 max-[500px]:py-6 border-[1px] mt-5">
+            <div className="w-full px-8 py-8 rounded-md cus-form max-[500px]:px-6 max-[500px]:py-6 border-[1px] mt-5">
                 {/* <Tabs defaultValue="generalInformation" className="w-full">
                     <TabsList className="my-3">
                         <TabsTrigger value="generalInformation">General Information</TabsTrigger>
@@ -277,7 +277,7 @@ const AddProductComponent = ({ selectedProducts, productId, isUpdate }: props) =
                     </TabsList> */}
 
                 <form className="grid w-full items-center" onSubmit={handleSubmit}>
-                    <CardContent>
+                    <div>
                         <div className="grid grid-cols-1 sm:grid-cols-3 w-full items-center gap-7 mb-5">
                             {/* Product Name */}
                             <div className="flex flex-col space-y-1.5">
@@ -340,7 +340,7 @@ const AddProductComponent = ({ selectedProducts, productId, isUpdate }: props) =
 
                             {/* isFeatured */}
                             <div className="col-span-1 flex flex-col space-y-1.5">
-                                <Label htmlFor="isFeatured">Is Featured ?</Label>
+                                <Label htmlFor="isFeatured">Featured</Label>
                                 <Select
                                     name="isFeatured"
                                     value={values.isFeatured ? 'true' : 'false'}
@@ -364,7 +364,7 @@ const AddProductComponent = ({ selectedProducts, productId, isUpdate }: props) =
                             </div>
                             {/* isNewProduct */}
                             <div className="col-span-1 flex flex-col space-y-1.5">
-                                <Label htmlFor="isNewProduct">Is New Product ?</Label>
+                                <Label htmlFor="isNewProduct">New Product</Label>
                                 <Select
                                     name="isNewProduct"
                                     value={values.isNewProduct ? 'true' : 'false'}
@@ -388,7 +388,7 @@ const AddProductComponent = ({ selectedProducts, productId, isUpdate }: props) =
                             </div>
                             {/* isBestSeller */}
                             <div className="col-span-1 flex flex-col space-y-1.5">
-                                <Label htmlFor="isBestSeller">Is Best Seller ?</Label>
+                                <Label htmlFor="isBestSeller">Best Seller </Label>
                                 <Select
                                     name="isBestSeller"
                                     value={values.isBestSeller ? 'true' : 'false'}
@@ -448,11 +448,11 @@ const AddProductComponent = ({ selectedProducts, productId, isUpdate }: props) =
                             </div>
                             {/* Manufacturer */}
                             <div className="col-span-1 flex flex-col space-y-1.5">
-                                <Label htmlFor="manufacturer">Manufacturer</Label>
+                                <Label htmlFor="manufacturer">Mfg. Date</Label>
                                 <Textarea
                                     id="manufacturer"
                                     name="manufacturer"
-                                    placeholder="Manufacturer"
+                                    placeholder="Mfg. Date"
                                     value={values?.manufacturer}
                                     onChange={handleChange}
                                     onBlur={handleBlur}
@@ -481,24 +481,7 @@ const AddProductComponent = ({ selectedProducts, productId, isUpdate }: props) =
                                     </small>
                                 ) : null}
                             </div>
-                            {/* Description */}
-                            <div className="col-span-1 flex flex-col space-y-1.5">
-                                <Label htmlFor="description">Description</Label>
-                                <Textarea
-                                    id="description"
-                                    name="description"
-                                    placeholder="description"
-                                    value={values?.description}
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
-                                    className="border-borderColor focus:border-borderColor bg-card outline-none"
-                                />
-                                {touched.description && errors.description ? (
-                                    <small id="description-help" className="text-rose-600">
-                                        {errors.description}
-                                    </small>
-                                ) : null}
-                            </div>
+
                             {/* Meta Title */}
                             <div className="col-span-1 flex flex-col space-y-1.5">
                                 <Label htmlFor="metaTitle">Meta Title</Label>
@@ -518,7 +501,7 @@ const AddProductComponent = ({ selectedProducts, productId, isUpdate }: props) =
                                 ) : null}
                             </div>
                             {/* Meta Description */}
-                            <div className="col-span-1 flex flex-col space-y-1.5">
+                            <div className="col-span-1  flex flex-col space-y-1.5">
                                 <Label htmlFor="metaDescription">Meta Description</Label>
                                 <Textarea
                                     id="metaDescription"
@@ -532,6 +515,24 @@ const AddProductComponent = ({ selectedProducts, productId, isUpdate }: props) =
                                 {touched.metaDescription && errors.metaDescription ? (
                                     <small id="metaDescription-help" className="text-rose-600">
                                         {errors.metaDescription as string}
+                                    </small>
+                                ) : null}
+                            </div>
+                            {/* Description */}
+                            <div className="col-span-1 sm:col-span-2 flex flex-col space-y-1.5">
+                                <Label htmlFor="description">Description</Label>
+                                <Textarea
+                                    id="description"
+                                    name="description"
+                                    placeholder="Description"
+                                    value={values?.description}
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    className="border-borderColor focus:border-borderColor bg-card outline-none"
+                                />
+                                {touched.description && errors.description ? (
+                                    <small id="description-help" className="text-rose-600">
+                                        {errors.description}
                                     </small>
                                 ) : null}
                             </div>
@@ -557,47 +558,18 @@ const AddProductComponent = ({ selectedProducts, productId, isUpdate }: props) =
                                 />
                             </div>
                         </div>
-                        {/* Add Variant Button */}
-                        <div className="mb-4">
-                            <Button
-                                type="button"
-                                className="rounded-lg px-6 bg-[var(--workspaceColor3)] text-[var(--workspaceColor4)]"
-                                onClick={() => {
-                                    const newVariant = {
-                                        variantId: '',
-                                        skuNo: '',
-                                        qrCode: '',
-                                        purchaseCost: 0,
-                                        mrp: 0,
-                                        sellingPrice: 0,
-                                        offerPrice: 0,
-                                        taxId: '',
-                                        stock: 0,
-                                        isReturnable: false,
-                                        returnDaysLimit: 0,
-                                        batchNo: '',
-                                        remarks: '',
-                                        manufacturingDate: new Date(),
-                                        expiryDate: new Date(),
-                                        // productVariantImage: '',
-                                        productVariantImage: [],
-                                    };
-                                    setFieldValue('productVariant', [...values.productVariant, newVariant]);
-                                    // setImagePreviews([...imagePreviews, []]);
-                                    setImagePreviews((prev) => [...prev, []]);
-                                }}
-                            >
-                                Add Variant
-                            </Button>
-                        </div>
+
                         {/* Input Row Start */}
                         {/* Loop through variants */}
                         {values.productVariant.map((variant, index) => (
-                            <div key={index} className="grid grid-cols-1 sm:grid-cols-9 w-full items-center gap-2 mb-1">
+                            <Card
+                                key={index}
+                                className="grid grid-cols-1 sm:grid-cols-10 items-center gap-2 mb-1  w-full px-4 py-4 rounded-md cus-form max-[500px]:px-6 max-[500px]:py-6 border-[1px] mt-5"
+                            >
                                 {/* Variant Name */}
                                 <div className="flex flex-col space-y-1.5">
                                     <Label htmlFor={`productVariant.${index}.variantId`}>
-                                        Variant Name<sup className="text-rose-600">*</sup>
+                                        Name<sup className="text-rose-600">*</sup>
                                     </Label>
 
                                     <VarienDropdown
@@ -822,7 +794,7 @@ const AddProductComponent = ({ selectedProducts, productId, isUpdate }: props) =
                                 {/*  Return Days Limit */}
                                 <div className="flex flex-col space-y-1.5">
                                     <Label htmlFor={`productVariant.${index}.returnDaysLimit`}>
-                                        Return Days Limit<sup className="text-rose-600">*</sup>
+                                        Return Days<sup className="text-rose-600">*</sup>
                                     </Label>
                                     <Input
                                         type="number"
@@ -844,7 +816,7 @@ const AddProductComponent = ({ selectedProducts, productId, isUpdate }: props) =
                                     ) : null}
                                 </div>
                                 {/* Batch No */}
-                                <div className="flex flex-col space-y-1.5">
+                                <div className="flex flex-col sm:col-span-1 space-y-1.5">
                                     <Label htmlFor={`productVariant.${index}.batchNo`}>
                                         Batch No<sup className="text-rose-600">*</sup>
                                     </Label>
@@ -868,13 +840,13 @@ const AddProductComponent = ({ selectedProducts, productId, isUpdate }: props) =
                                 {/* Manufacturing Date */}
                                 <div className="flex flex-col space-y-1.5">
                                     <Label htmlFor={`productVariant.${index}.manufacturingDate`}>
-                                        Manufactured Date<sup className="text-rose-600">*</sup>
+                                        Mfg. Date<sup className="text-rose-600">*</sup>
                                     </Label>
                                     <Popover>
                                         <PopoverTrigger asChild>
                                             <Button
                                                 variant={'outline'}
-                                                className="w-full justify-start text-left font-normal"
+                                                className="w-full justify-start text-left font-normal text-xs bg-card"
                                             >
                                                 <CalendarIcon className="mr-2 h-4 w-4" />
                                                 {variant.manufacturingDate ? (
@@ -897,15 +869,15 @@ const AddProductComponent = ({ selectedProducts, productId, isUpdate }: props) =
                                     </Popover>
                                 </div>
                                 {/* Expiry Date */}
-                                <div className="flex flex-col space-y-1.5">
+                                <div className="flex flex-col  space-y-1.5">
                                     <Label htmlFor={`productVariant.${index}.expiryDate`}>
-                                        Expiry Date<sup className="text-rose-600">*</sup>
+                                        Exp. Date<sup className="text-rose-600">*</sup>
                                     </Label>
                                     <Popover>
                                         <PopoverTrigger asChild>
                                             <Button
                                                 variant={'outline'}
-                                                className="w-full justify-start text-left font-normal"
+                                                className="w-full justify-start text-left font-normal text-xs bg-card"
                                             >
                                                 <CalendarIcon className="mr-2 h-4 w-4" />
                                                 {variant.expiryDate ? (
@@ -926,7 +898,7 @@ const AddProductComponent = ({ selectedProducts, productId, isUpdate }: props) =
                                     </Popover>
                                 </div>
                                 {/* Remarks */}
-                                <div className="flex flex-col space-y-1.5">
+                                <div className="sm:col-span-2 flex flex-col space-y-1.5">
                                     <Label htmlFor={`productVariant.${index}.remarks`}>
                                         Remarks<sup className="text-rose-600">*</sup>
                                     </Label>
@@ -935,7 +907,7 @@ const AddProductComponent = ({ selectedProducts, productId, isUpdate }: props) =
                                         value={variant.remarks}
                                         onChange={handleChange}
                                         onBlur={handleBlur}
-                                        className="border-borderColor focus:border-borderColor bg-card outline-none"
+                                        className="cstheight sm:h-10 border-borderColor focus:border-borderColor bg-card outline-none"
                                     />
                                     {errors.productVariant &&
                                     Array.isArray(errors.productVariant) &&
@@ -947,7 +919,7 @@ const AddProductComponent = ({ selectedProducts, productId, isUpdate }: props) =
                                     ) : null}
                                 </div>
                                 {/* Upload Image */}
-                                <div className="flex flex-col space-y-1.5">
+                                <div className="flex flex-col sm:col-span-2 space-y-1.5">
                                     <Label
                                         htmlFor={`productVariant.${index}.productVariantImage`}
                                         // className="sm:hidden"
@@ -955,6 +927,7 @@ const AddProductComponent = ({ selectedProducts, productId, isUpdate }: props) =
                                         Upload Image
                                     </Label>
                                     <Input
+                                        className="text-xs"
                                         name={`productVariant.${index}.productVariantImage`}
                                         type="file"
                                         accept="image/*"
@@ -994,6 +967,9 @@ const AddProductComponent = ({ selectedProducts, productId, isUpdate }: props) =
                                         </div>
                                     )} */}
                                     {/* Preview Images */}
+                                </div>
+                                <div className="flex flex-col space-y-1.5">
+                                    {' '}
                                     {imagePreviews[index]?.length > 0 && <ImagePreview images={imagePreviews[index]} />}
                                 </div>
                                 {/* Delete Row */}
@@ -1028,11 +1004,44 @@ const AddProductComponent = ({ selectedProducts, productId, isUpdate }: props) =
                                         </TooltipProvider>
                                     </div>
                                 </div>
-                            </div>
+                            </Card>
                         ))}
                         {/* Input Row End */}
-                    </CardContent>
-                    <CardFooter className="flex justify-end">
+                        {/* Add Variant Button */}
+                        <div className="my-4">
+                            <Button
+                                type="button"
+                                className="rounded-lg px-6 bg-[var(--workspaceColor3)] text-[var(--workspaceColor4)]"
+                                onClick={() => {
+                                    const newVariant = {
+                                        variantId: '',
+                                        skuNo: '',
+                                        qrCode: '',
+                                        purchaseCost: 0,
+                                        mrp: 0,
+                                        sellingPrice: 0,
+                                        offerPrice: 0,
+                                        taxId: '',
+                                        stock: 0,
+                                        isReturnable: false,
+                                        returnDaysLimit: 0,
+                                        batchNo: '',
+                                        remarks: '',
+                                        manufacturingDate: new Date(),
+                                        expiryDate: new Date(),
+                                        // productVariantImage: '',
+                                        productVariantImage: [],
+                                    };
+                                    setFieldValue('productVariant', [...values.productVariant, newVariant]);
+                                    // setImagePreviews([...imagePreviews, []]);
+                                    setImagePreviews((prev) => [...prev, []]);
+                                }}
+                            >
+                                Add Variant
+                            </Button>
+                        </div>
+                    </div>
+                    <div className="flex justify-end">
                         <Button
                             className="rounded-lg px-6 bg-[var(--workspaceColor3)] text-[var(--workspaceColor4)]"
                             variant="outline"
@@ -1042,9 +1051,9 @@ const AddProductComponent = ({ selectedProducts, productId, isUpdate }: props) =
                             <Save className="mr-3 w-4 h-4" />
                             {isLoading ? <Icons.spinner className="h-4 w-4 animate-spin" /> : <>{'Save'}</>}
                         </Button>
-                    </CardFooter>
+                    </div>
                 </form>
-            </Card>
+            </div>
         </>
     );
 };

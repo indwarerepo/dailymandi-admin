@@ -235,7 +235,7 @@ const AddEditVariantComponent = ({ selectedVariants, variantId, productId, isUpd
     return (
         <>
             {/* Form Start ==================== */}
-            <Card className="w-full px-8 py-8 cus-form max-[500px]:px-6 max-[500px]:py-6 border-[1px] mt-5">
+            <Card className="w-full px-8 py-8 cus-form max-[500px]:px-6 max-[500px]:py-6 border-[1px] mt-5 mb-5">
                 {/* <Tabs defaultValue="generalInformation" className="w-full">
                     <TabsList className="my-3">
                         <TabsTrigger value="generalInformation">General Information</TabsTrigger>
@@ -245,7 +245,7 @@ const AddEditVariantComponent = ({ selectedVariants, variantId, productId, isUpd
 
                 <form className="grid w-full items-center" onSubmit={handleSubmit}>
                     <CardContent>
-                        <div className="grid grid-cols-1 sm:grid-cols-12 w-full items-center gap-7 mb-5">
+                        <div className="grid grid-cols-1 sm:grid-cols-9 items-center gap-3 mb-1  w-full px-0 py-0 rounded-md cus-form max-[500px]:px-0 max-[500px]:py-6  mt-5">
                             {/* Variant Name */}
                             <div className="flex flex-col space-y-1.5 items-start">
                                 <Label htmlFor="variantId">
@@ -384,7 +384,7 @@ const AddEditVariantComponent = ({ selectedVariants, variantId, productId, isUpd
                             {/*  Return Days Limit */}
                             <div className="flex flex-col space-y-1.5">
                                 <Label htmlFor="returnDaysLimit">
-                                    Return Days Limit<sup className="text-rose-600">*</sup>
+                                    Return Days<sup className="text-rose-600">*</sup>
                                 </Label>
                                 <Input
                                     type="number"
@@ -412,13 +412,13 @@ const AddEditVariantComponent = ({ selectedVariants, variantId, productId, isUpd
                             {/* Manufacturing Date */}
                             <div className="flex flex-col space-y-1.5 ">
                                 <Label htmlFor="manufacturingDate">
-                                    Manufactured Date<sup className="text-rose-600">*</sup>
+                                    Mfg. Date<sup className="text-rose-600">*</sup>
                                 </Label>
                                 <Popover>
                                     <PopoverTrigger asChild>
                                         <Button
                                             variant={'outline'}
-                                            className="w-full justify-start text-left font-normal"
+                                            className="w-full justify-start text-left font-normal text-xs bg-card"
                                         >
                                             <CalendarIcon className="mr-2 h-4 w-4" />
                                             {values.manufacturingDate ? (
@@ -443,13 +443,13 @@ const AddEditVariantComponent = ({ selectedVariants, variantId, productId, isUpd
                             {/* Expiry Date */}
                             <div className="flex flex-col space-y-1.5">
                                 <Label htmlFor="expiryDate">
-                                    Expiry Date<sup className="text-rose-600">*</sup>
+                                    Exp. Date<sup className="text-rose-600">*</sup>
                                 </Label>
                                 <Popover>
                                     <PopoverTrigger asChild>
                                         <Button
                                             variant={'outline'}
-                                            className="w-full justify-start text-left font-normal"
+                                            className="w-full justify-start text-left font-normal text-xs bg-card"
                                         >
                                             <CalendarIcon className="mr-2 h-4 w-4" />
                                             {values.expiryDate ? (
@@ -470,7 +470,7 @@ const AddEditVariantComponent = ({ selectedVariants, variantId, productId, isUpd
                                 </Popover>
                             </div>
                             {/* Remarks */}
-                            <div className="flex flex-col space-y-1.5">
+                            <div className="flex sm:col-span-2 flex-col space-y-1.5">
                                 <Label htmlFor="remarks">
                                     Remarks<sup className="text-rose-600">*</sup>
                                 </Label>
@@ -479,11 +479,11 @@ const AddEditVariantComponent = ({ selectedVariants, variantId, productId, isUpd
                                     value={values.remarks}
                                     onChange={handleChange}
                                     onBlur={handleBlur}
-                                    className="border-borderColor focus:border-borderColor bg-card outline-none"
+                                    className="cstheight sm:h-10 border-borderColor focus:border-borderColor bg-card outline-none "
                                 />
                             </div>
                             {/* Upload Image */}
-                            <div className="flex flex-col space-y-1.5">
+                            <div className="flex sm:col-span-2 flex-col space-y-1.5">
                                 <Label
                                     htmlFor="productVariantImage"
                                     // className="sm:hidden"

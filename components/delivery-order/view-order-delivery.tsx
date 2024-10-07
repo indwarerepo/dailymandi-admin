@@ -27,6 +27,7 @@ import { Icons } from '../ui/icons';
 import { Spinner } from '../ui/spinner';
 import {
     useDeliveryOTPVerificationMutation,
+    useUpdateOrderDeliveryReturnMutation,
     useUpdateOrderDeliveryStatusMutation,
 } from '@/features/order-delivery/order-delivery-api';
 interface DetailProps {
@@ -44,7 +45,19 @@ const ViewOrderDeliveryComponent: React.FC<DetailProps> = ({ orderData }: Detail
     const [checkedItems, setCheckedItems] = useState<{ [key: number]: boolean }>({});
     // Mutation for updating the order status
     const [updateOrderStatus] = useUpdateOrderDeliveryStatusMutation();
+    const [updateReturnDelivery] = useUpdateOrderDeliveryReturnMutation();
     const [deliveryOTPVerification] = useDeliveryOTPVerificationMutation();
+
+    // Initialize checkedItems to have all products checked by default
+    useEffect(() => {
+        if (orderData?.orderDetails) {
+            const initialCheckedItems = orderData.orderDetails.reduce((acc: any, detail: any) => {
+                acc[detail.product.id] = true; // Mark all products as checked
+                return acc;
+            }, {});
+            setCheckedItems(initialCheckedItems);
+        }
+    }, [orderData]);
     // UseEffect to initialize quantities when orderData.orderDetails changes
     useEffect(() => {
         if (orderData?.orderDetails && Array.isArray(orderData.orderDetails)) {
@@ -83,17 +96,48 @@ const ViewOrderDeliveryComponent: React.FC<DetailProps> = ({ orderData }: Detail
         }));
     };
 
+    // Calculate new dueAmount based on unchecked products
+    const calculateNewDueAmount = () => {
+        const uncheckedProducts = orderData?.orderDetails.filter((detail: any) => !checkedItems[detail.product.id]);
+
+        const totalUncheckedOriginalPrice = uncheckedProducts.reduce(
+            (total: number, product: any) => total + parseFloat(product?.orderPrice) * parseFloat(product?.quantity),
+            0,
+        );
+
+        const newDueAmount = orderData?.dueAmount.toFixed(2) - totalUncheckedOriginalPrice.toFixed(2);
+        return newDueAmount > 0 ? newDueAmount : 0;
+    };
+
     // Generate prodArr on button click
     const handleButtonClick = () => {
-        const prodArr = orderData.orderDetails.map((detail: any, index: number) => ({
-            prodId: detail.product.id,
-            orderType: checkedItems[detail.product.id] ? 1 : 0,
-            orderQnt: quantities[index],
-        }));
-        console.log('Generated prodArr:', prodArr);
-        const checkedProducts = prodArr.filter((product: any) => product.orderType === 1);
-        console.log('🚀 ~ handleButtonClick ~ checkedProducts:', checkedProducts);
-        let final = { checkedProducts, deliveryAmt: orderData?.deliveryAmt, totalAmt: orderData?.orderTotal };
+        // const prodArr = orderData.orderDetails.map((detail: any, index: number) => ({
+        //     prodId: detail.product.id,
+        //     orderType: checkedItems[detail.product.id] ? 1 : 0,
+        //     orderQnt: quantities[index],
+        // }));
+        // const prodArr = orderData.orderDetails.map((detail: any, index: number) => ({
+        //     prodId: detail.product.id,
+        // }));
+        // console.log('Generated prodArr:', prodArr);
+        // Filter unchecked products
+        // const uncheckedProducts = prodArr?.filter((prod: any) => !checkedItems[prod.prodId]);
+
+        // console.log('Unchecked Products:', uncheckedProducts);
+        // const checkedProducts = prodArr.filter((product: any) => product.orderType === 1);
+        // console.log('🚀 ~ handleButtonClick ~ checkedProducts:', checkedProducts);
+
+        const isAtLeastOneChecked = Object.values(checkedItems).some((isChecked) => isChecked);
+
+        if (!isAtLeastOneChecked) {
+            toast.error('Please select at least one product.');
+            return;
+        }
+        const uncheckedProductIds = orderData?.orderDetails
+            .filter((detail: any) => !checkedItems[detail?.product?.id])
+            .map((detail: any) => detail?.product?.id);
+        const newDueAmount = calculateNewDueAmount();
+        let final = { uncheckedProductIds, deliveryAmt: orderData?.deliveryAmt, totalAmt: orderData?.orderTotal };
         console.log('🚀 ~ handleButtonClick ~ final:', final);
     };
 
@@ -574,6 +618,9 @@ const ViewOrderDeliveryComponent: React.FC<DetailProps> = ({ orderData }: Detail
                     <Card className="w-full px-14 py-14 cus-form max-[500px]:px-6 max-[500px]:py-6 border-[1px] mt-5">
                         <CardContent>
                             <div className="grid grid-cols-2 md:grid-cols-2 w-full items-center gap-5 mb-5">
+                                {Object.keys(checkedItems).length > 0 && (
+                                    <p>Payable Amount: {calculateNewDueAmount()}</p>
+                                )}
                                 <Button
                                     className="rounded-lg px-6 bg-[var(--workspaceColor3)] text-[var(--workspaceColor4)]"
                                     variant="outline"
