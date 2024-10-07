@@ -45,7 +45,7 @@ export default function AuthenticationPage() {
                         </div>
                         <div className="foot px-10 py-5 bg-[#345817] hidden sm:block">
                             <p className="text-sm font-ight text-[var(--green-text-ind)]">
-                                © 2024 Aonemart. All Rights Reserved
+                                © 2024 DailyMandi. All Rights Reserved
                             </p>
                         </div>
                     </div>
@@ -61,7 +61,7 @@ export default function AuthenticationPage() {
                         </div>
                         <Card className="w-full sm:w-[28rem] border-[1px] shadow-md p-7 sm:px-10 sm:py-9">
                             <CardHeader>
-                                <CardTitle className="text-2xl sm:text-2xl mb-1">Welcome to Aonemart</CardTitle>
+                                <CardTitle className="text-2xl sm:text-2xl mb-1">Welcome to DailyMandi</CardTitle>
                                 <CardDescription className="text-xs sm:text-sm ">
                                     Sign in by entering information below
                                 </CardDescription>

@@ -27,7 +27,7 @@ const Layout = ({ children }: ChildContainerProps) => {
     return (
         <>
             <Head>
-                <title>Admin | Aonemart</title>
+                <title>Admin | DailyMandi</title>
                 <meta charSet="UTF-8" />
                 <meta
                     name="description"
