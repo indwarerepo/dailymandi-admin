@@ -16,7 +16,7 @@ const AppFooter = forwardRef<HTMLElement, React.HTMLAttributes<HTMLElement>>(({ 
         <div className={cn(`${isAuthPage ? 'auth-layout-footer' : 'layout-footer'} bg-footbarbg border-0`, className)}>
             <span className="font-normal text-sm text-foreground font-popp">
                 {' '}
-                © 2024 Aonemart Admin. All Rights Reserved.
+                © 2024 DailyMandi Admin. All Rights Reserved.
             </span>
         </div>
     );

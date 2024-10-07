@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { LayoutContext } from './context/layoutcontext';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
-import logo from '../public/images/logo.png';
+import logo from '../public/images/Frame 14.png';
 // import whiteLogo from '../public/images/logow.png';
 import AppMenu from './AppMenu';
 import AppMenuIcon from './AppMenuIcon';
@@ -36,9 +36,9 @@ const AppSidebar = () => {
                     {(layoutState.menuMobileHideState && layoutState.menuHideState) || !layoutState.menuHideState ? (
                         <>
                             {resolvedTheme == 'light' || resolvedTheme == 'dark' ? (
-                                <Image src={logo} width={150} height={100} alt="logo" />
+                                <Image src={logo} width={150} height={80} alt="logo" />
                             ) : (
-                                <Image src={logo} width={150} height={100} alt="logo" />
+                                <Image src={logo} width={150} height={80} alt="logo" />
                             )}
                             <ArrowLeftCircle
                                 className="h-5 w-5 text-[var(--workspaceColor1)]"
