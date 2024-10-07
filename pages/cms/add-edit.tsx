@@ -1,11 +1,17 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import AddEditComponent from '@/components/cms/add-edit';
+// import AddEditComponent from '@/components/cms/add-edit';
 import { ICMS } from '@/types/interfaces/cms';
 import { useGetCMSByIdQuery } from '@/features/cms/cmsAPI';
 import { getCookie } from 'cookies-next';
 import { useAppSelector } from '@/store/hooks';
-
+import dynamic from 'next/dynamic';
+const AddEditComponent = dynamic(
+    () => {
+        return import('@/components/cms/add-edit');
+    },
+    { ssr: false },
+);
 const initialCMS: ICMS = {
     id: '',
     name: '',
