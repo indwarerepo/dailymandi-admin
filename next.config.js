@@ -8,7 +8,7 @@ const nextConfig = {
         contextPath: '',
     },
     images: {
-        domains: ['aonemartstorageaccount.blob.core.windows.net'],
+        domains: ['dailymandistorageaccount.blob.core.windows.net'],
     },
 };
 

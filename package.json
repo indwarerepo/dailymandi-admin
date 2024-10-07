@@ -1,11 +1,11 @@
 {
-    "name": "aonemart_admin",
+    "name": "dailymandi_admin",
     "version": "0.1.0",
     "private": true,
     "scripts": {
         "dev": "next dev -p 8002",
         "build": "next build",
-        "start": "next start -p 8085",
+        "start": "next start -p 8086",
         "lint": "next lint"
     },
     "dependencies": {
