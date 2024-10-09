@@ -32,7 +32,7 @@ const Dashboard = () => {
             <div className="grid grid-cols-2 gap-x-6 sm:grid-cols-6">
                 <Card className="w-full p-8 shadow-md hover:shadow ">
                     <CardHeader className=" p-1 mb-5 w-10 h-10 bg-[#f5f5f5] rounded-md">
-                        <Layers2 className="p-3-600 w-8 h-8 text-[var(--workspaceColor2)]" />
+                        <Layers2 className="p-3-600 w-8 h-8 text-themeOrange" />
                     </CardHeader>
                     <CardContent className="py-0">
                         <p className="text-md sm:text-lg font-medium leading-4 mb-2 text-[#868686] pr-5">Revenue</p>
@@ -44,7 +44,7 @@ const Dashboard = () => {
                 </Card>
                 <Card className="w-full p-8 shadow-md hover:shadow ">
                     <CardHeader className=" p-1 mb-5 w-10 h-10 bg-[#f5f5f5] rounded-md">
-                        <Layers2 className="p-3-600 w-8 h-8 text-[var(--workspaceColor2)]" />
+                        <Layers2 className="p-3-600 w-8 h-8 text-themeOrange" />
                     </CardHeader>
                     <CardContent className="py-0">
                         <p className="text-md sm:text-lg font-medium leading-4 mb-2 text-[#868686] pr-5">Revenue</p>
@@ -56,7 +56,7 @@ const Dashboard = () => {
                 </Card>
                 <Card className="w-full p-8 shadow-md hover:shadow ">
                     <CardHeader className=" p-1 mb-5 w-10 h-10 bg-[#f5f5f5] rounded-md">
-                        <Layers2 className="p-3-600 w-8 h-8 text-[var(--workspaceColor2)]" />
+                        <Layers2 className="p-3-600 w-8 h-8 text-themeOrange" />
                     </CardHeader>
                     <CardContent className="py-0">
                         <p className="text-md sm:text-lg font-medium leading-4 mb-2 text-[#868686] pr-5">Revenue</p>
@@ -68,7 +68,7 @@ const Dashboard = () => {
                 </Card>
                 <Card className="w-full p-8 shadow-md hover:shadow">
                     <CardHeader className=" p-1 w-10 h-10 mb-5 bg-[#f5f5f5] rounded-md">
-                        <Wallet className="p-3-600 w-8 h-8 text-[var(--workspaceColor2)]" />
+                        <Wallet className="p-3-600 w-8 h-8 text-themeOrange" />
                     </CardHeader>
                     <CardContent className="py-0">
                         <p className="text-md sm:text-lg font-medium leading-4 mb-2 text-[#868686] pr-5">Profit</p>
@@ -80,7 +80,7 @@ const Dashboard = () => {
                 </Card>
                 <Card className="w-full p-8 shadow-md hover:shadow">
                     <CardHeader className=" p-1 w-10 h-10 mb-5 bg-[#f5f5f5] rounded-md">
-                        <Wallet className="p-3-600 w-8 h-8 text-[var(--workspaceColor2)]" />
+                        <Wallet className="p-3-600 w-8 h-8 text-themeOrange" />
                     </CardHeader>
                     <CardContent className="py-0">
                         <p className="text-md sm:text-lg font-medium leading-4 mb-2 text-[#868686] pr-5">Profit</p>
@@ -92,7 +92,7 @@ const Dashboard = () => {
                 </Card>
                 <Card className="w-full p-8 shadow-md hover:shadow">
                     <CardHeader className=" p-1 w-10 h-10 mb-5 bg-[#f5f5f5] rounded-md">
-                        <Wallet className="p-3-600 w-8 h-8 text-[var(--workspaceColor2)]" />
+                        <Wallet className="p-3-600 w-8 h-8 text-themeOrange" />
                     </CardHeader>
                     <CardContent className="py-0">
                         <p className="text-md sm:text-lg font-medium leading-4 mb-2 text-[#868686] pr-5">Profit</p>
@@ -122,8 +122,8 @@ const Dashboard = () => {
                                     tickFormatter={(value) => value.slice(0, 3)}
                                 />
                                 <ChartTooltip content={<ChartTooltipContent />} />
-                                <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
-                                <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
+                                <Bar dataKey="desktop" fill="#FEA722" radius={4} />
+                                <Bar dataKey="mobile" fill="#F10200" radius={4} />
                             </BarChart>
                         </ChartContainer>
                     </Card>
@@ -146,8 +146,8 @@ const Dashboard = () => {
                                     tickFormatter={(value) => value.slice(0, 3)}
                                 />
                                 <ChartTooltip content={<ChartTooltipContent />} />
-                                <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
-                                <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
+                                <Bar dataKey="desktop" fill="#FEA722" radius={4} />
+                                <Bar dataKey="mobile" fill="#F10200" radius={4} />
                             </BarChart>
                         </ChartContainer>
                     </Card>
@@ -168,8 +168,8 @@ const Dashboard = () => {
                                     tickFormatter={(value) => value.slice(0, 3)}
                                 />
                                 <ChartTooltip content={<ChartTooltipContent />} />
-                                <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
-                                <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
+                                <Bar dataKey="desktop" fill="#FEA722" radius={4} />
+                                <Bar dataKey="mobile" fill="#F10200" radius={4} />
                             </BarChart>
                         </ChartContainer>
                     </Card>

@@ -54,9 +54,9 @@ const Layout = ({ children }: ChildContainerProps) => {
             pathname === '/auth/reset-password' ? (
                 <>
                     <div className="layout-main relative">
-                        <div className="fixed top-5 right-5" style={{ zIndex: '100' }}>
+                        {/* <div className="fixed top-5 right-5" style={{ zIndex: '100' }}>
                             <ThemeToggle />
-                        </div>
+                        </div> */}
                         {children}
                     </div>
                     {/* <AppFooter /> */}

@@ -30,39 +30,39 @@ export default function AuthenticationPage() {
     return (
         <div className="relative">
             <div className="grid grid-cols-12  w-full h-fit sm:h-screen">
-                <div className="col-span-12 sm:col-span-4  hidden sm:block">
-                    <div className="flex flex-col h-fit sm:h-full ">
-                        <div className="flex justify-between flex-col h-fit sm:h-full auth-bg-image ">
-                            <div className="content-div px-10 py-10 hidden sm:block">
-                                <h2 className='"text-3xl sm:text-4xl font-semibold leading-10	text-slate-100 pr-5'>
+                <div className="col-span-12 sm:col-span-5  hidden sm:block bg-[#fef4d6]">
+                    <div className="flex flex-col h-fit sm:h-full rounded-r-[30px] overflow-hidden cust-bg">
+                        <div className="flex justify-start flex-col h-fit sm:h-full bg-transparent ">
+                            <div className="content-div px-10 py-10 hidden sm:block pt-[10%]">
+                                <h2 className='"text-[30px] lg:text-[50px] font-bold leading-[1.1]	text-black pr-5'>
                                     Your Online Marketplace for Quality Groceries
                                 </h2>
-                                <p className="text-base sm:text-base font-thin text-slate-100">
+                                <p className="text-base sm:text-base font-thin text-gray-800">
                                     Delivering fresh groceries to your doorstep with ease, convenience, and quality.
                                     Your trusted online market for all essentials.
                                 </p>
                             </div>
                         </div>
-                        <div className="foot px-10 py-5 bg-[#345817] hidden sm:block">
+                        {/* <div className="foot px-10 py-5 bg-themeDarkOrange hidden sm:block">
                             <p className="text-sm font-ight text-[var(--green-text-ind)]">
                                 © 2024 DailyMandi. All Rights Reserved
                             </p>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
-                <div className="col-span-12 sm:col-span-8 p-3 h-full bg-white login-bg-right">
+                <div className="col-span-12 sm:col-span-7 p-3 h-full bg-white login-bg-right ">
                     <div className="flex flex-col justify-center items-center h-full">
-                        <div className="logo mb-2 sm:mb-7 px-3 py-3 sm:px-10 sm:py-3">
+                        <div className="logo mb-2 sm:mb-7 px-3 py-3 sm:px-10 sm:py-3 ">
                             {themeType === 'dark' ? (
-                                <Image src={logo} alt="logo" width={225} className="" />
+                                <Image src={logo} alt="logo" width={150} className="" />
                             ) : (
-                                <Image src={logo} alt="logo" width={225} className="" />
+                                <Image src={logo} alt="logo" width={150} className="" />
                             )}
                         </div>
-                        <Card className="w-full sm:w-[28rem] border-[1px] shadow-md p-7 sm:px-10 sm:py-9">
+                        <Card className="w-full sm:w-[28rem] border-0 shadow-none p-7 sm:px-10 sm:py-9 ">
                             <CardHeader>
-                                <CardTitle className="text-2xl sm:text-2xl mb-1">Welcome to DailyMandi</CardTitle>
-                                <CardDescription className="text-xs sm:text-sm ">
+                                <CardTitle className="text-2xl sm:text-2xl m-0 p-0  text-center w-full">Welcome to <span className='text-themeOrange'>DailyMandi</span></CardTitle>
+                                <CardDescription className="text-xs sm:text-sm text-center w-full">
                                     Sign in by entering information below
                                 </CardDescription>
                             </CardHeader>
@@ -70,6 +70,11 @@ export default function AuthenticationPage() {
                                 <UserLoginAuthForm />
                             </CardContent>
                         </Card>
+                        <div className="foot px-10 py-5 hidden sm:block">
+                            <p className="text-sm font-ight text-black">
+                                © 2024 <span className='text-themeDarkOrange'>DailyMandi.</span> All Rights Reserved
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

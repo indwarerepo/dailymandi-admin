@@ -37,6 +37,9 @@ const config = {
         taskColor: "hsl(var(--taskColor))",
         subTaskColor: "hsl(var(--subTaskColor))",
         greenInd: "hsl(var(--green-ind))",
+        themeOrange:"hsl(var(--theme-orange))",
+        themeDarkOrange:"hsl(var(--theme-dark-orange))",
+        
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
