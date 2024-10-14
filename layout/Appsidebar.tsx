@@ -38,7 +38,7 @@ const AppSidebar = () => {
                             {resolvedTheme == 'light' || resolvedTheme == 'dark' ? (
                                 <Image src={logo} width={150} height={100} alt="logo" />
                             ) : (
-                                <Image src={logo} width={150} height={100} alt="logo" />
+                                <Image src={logo} width={140} height={100} alt="logo" className='p-1' />
                             )}
                             <ArrowLeftCircle
                                 className="h-5 w-5 text-[var(--workspaceColor1)]"

@@ -85,6 +85,8 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+    --theme-orange:36, 99%, 56%;
+    --theme-dark-orange:0, 100%, 47%;
     
   }
 
@@ -190,9 +192,9 @@
   background: #999;
 }
 .login-bg-right{
-  background-color: #ffffff;
+  background-color: #fef4d6;
   opacity: 0.8;
-  background-image:  radial-gradient(#c2c2c2 0.8px, transparent 0.9px), radial-gradient(#bebebe 0.5px, #ffffff 0.5px);
+  background-image:  radial-gradient(#FEA722 0.8px, transparent 0.9px), radial-gradient(#FEA722 0.5px, #fef4d6 0.5px);
   background-size: 20px 20px;
   background-position: 0 0,10px 10px;
 }
