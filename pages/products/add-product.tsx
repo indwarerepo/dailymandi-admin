@@ -64,6 +64,7 @@ const initialProducts = {
     description: '',
     productImage: '',
     categoryId: '',
+    subCategoryId: '',
     brandId: '',
     isFeatured: false,
     isNewProduct: true,

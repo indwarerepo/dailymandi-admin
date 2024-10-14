@@ -220,6 +220,12 @@ const AddEditComponent = ({ selectedBanners, setSelectedBanners, thisId, isUpdat
                                                     <SelectItem value="1">Mobile Option 1</SelectItem>
                                                     <SelectItem value="2">Mobile Option 2</SelectItem>
                                                     <SelectItem value="3">Mobile Option 3</SelectItem>
+                                                    <SelectItem value="4">Mobile Option 4</SelectItem>
+                                                    <SelectItem value="5">Mobile Option 5</SelectItem>
+                                                    <SelectItem value="6">Mobile Option 6</SelectItem>
+                                                    <SelectItem value="7">Mobile Option 7</SelectItem>
+                                                    <SelectItem value="8">Mobile Option 8</SelectItem>
+                                                    <SelectItem value="9">Mobile Option 9</SelectItem>
                                                 </>
                                             )}
                                             {values?.bannerDisplay === 'W' && (
@@ -230,6 +236,12 @@ const AddEditComponent = ({ selectedBanners, setSelectedBanners, thisId, isUpdat
                                                     <SelectItem value="4">Desktop Option 4</SelectItem>
                                                     <SelectItem value="5">Desktop Option 5</SelectItem>
                                                     <SelectItem value="6">Desktop Option 6</SelectItem>
+                                                    <SelectItem value="7">Desktop Option 7</SelectItem>
+                                                    <SelectItem value="8">Desktop Option 8</SelectItem>
+                                                    <SelectItem value="9">Desktop Option 9</SelectItem>
+                                                    <SelectItem value="10">Desktop Option 10</SelectItem>
+                                                    <SelectItem value="11">Desktop Option 11</SelectItem>
+                                                    <SelectItem value="12">Desktop Option 12</SelectItem>
                                                 </>
                                             )}
                                         </SelectGroup>

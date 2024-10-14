@@ -27,6 +27,7 @@ import { productSchema } from '@/types/schemas';
 import { useAddProductMutation, useEditProductMutation } from '@/features/product/productAPI';
 import { convertBase64 } from '@/lib/base64convertor';
 import ProductCategoryDropdown from '@/components/dropdowns/category-dropdown';
+import SubCategoryByCategory from '@/components/dropdowns/subcategory-dropdown';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
 import { Icons } from '../ui/icons';
@@ -62,6 +63,7 @@ const UpdateProductComponent = ({ selectedProducts, productId, isUpdate }: props
                 manufacturer: values.manufacturer,
                 brandId: values.brandId || values.product_brand?.id,
                 categoryId: values.categoryId || values.productCategory?.id,
+                subCategoryId: values.subCategoryId,
                 isFeatured: values.isFeatured || false,
                 isNewProduct: values.isNewProduct || false,
                 isBestSeller: values.isBestSeller || false,
@@ -203,6 +205,22 @@ const UpdateProductComponent = ({ selectedProducts, productId, isUpdate }: props
                                         {errors.categoryId as string}
                                     </small>
                                 ) : null}
+                            </div>
+
+                            <div className="flex flex-col space-y-1.5">
+                                <Label htmlFor="category">
+                                    Sub Category<sup className="text-rose-600">*</sup>
+                                </Label>
+                                <SubCategoryByCategory
+                                    onChange={handleChange}
+                                    categoryId={values?.categoryId}
+                                    subCategoryId={values?.subCategoryId}
+                                />
+                                {/* {touched.subCategoryId && errors.subCategoryId ? (
+                                    <small id="subCategoryId-help" className="text-rose-600">
+                                        {errors.subCategoryId}
+                                    </small>
+                                ) : null} */}
                             </div>
 
                             {/* Brand */}

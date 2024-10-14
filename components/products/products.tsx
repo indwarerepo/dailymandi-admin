@@ -236,6 +236,22 @@ export const ProductColumns: ColumnDef<Product>[] = [
         cell: ({ row }) => <div className="text-sm">{row?.original?.productCategory?.name}</div>,
     },
     {
+        id: 'subCategoryId',
+        header: ({ column }) => {
+            return (
+                <Button
+                    variant="ghost"
+                    onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+                    className="w-full items-center justify-start"
+                >
+                    Sub Category
+                    <ArrowUpDown className="ml-2 h-4 w-4" />
+                </Button>
+            );
+        },
+        cell: ({ row }) => <div className="text-sm">{row?.original?.product_subcategory?.name}</div>,
+    },
+    {
         id: 'brand',
         header: ({ column }) => {
             return (

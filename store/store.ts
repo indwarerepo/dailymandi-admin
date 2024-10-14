@@ -22,6 +22,7 @@ import { orderApi } from '@/features/order/orderApi';
 import { miscChargesApi } from '@/features/miscCharges/miscChargesAPI';
 import { orderDeliveryApi, orderDeliverySlice } from '@/features/order-delivery/order-delivery-api';
 import { brandApi, brandSlice } from '@/features/brand/brandAPI';
+import { productSubCategoryApi, productSubCategorySlice } from '@/features/productSubcategory/productSubcategoryAPI';
 
 // settings for persistence of storage & selected reducers
 const createNoopStorage = () => {
@@ -56,6 +57,7 @@ export const store = () =>
             adminSlice: adminSlice.reducer,
             customerSlice: customerSlice.reducer,
             productCategorySlice: productCategorySlice.reducer,
+            productSubCategorySlice: productSubCategorySlice.reducer,
             bannerSlice: bannerSlice.reducer,
             zoneSlice: zoneSlice.reducer,
             pinCodeSlice: pinCodeSlice.reducer,
@@ -74,6 +76,7 @@ export const store = () =>
             [adminApi.reducerPath]: adminApi.reducer,
             [customerApi.reducerPath]: customerApi.reducer,
             [productCategoryApi.reducerPath]: productCategoryApi.reducer,
+            [productSubCategoryApi.reducerPath]: productSubCategoryApi.reducer,
             [bannerApi.reducerPath]: bannerApi.reducer,
             [zoneApi.reducerPath]: zoneApi.reducer,
             [pinCodeApi.reducerPath]: pinCodeApi.reducer,
@@ -96,6 +99,7 @@ export const store = () =>
                 adminApi.middleware,
                 customerApi.middleware,
                 productCategoryApi.middleware,
+                productSubCategoryApi.middleware,
                 bannerApi.middleware,
                 zoneApi.middleware,
                 pinCodeApi.middleware,
