@@ -69,6 +69,11 @@ const AppMenu = () => {
                             to: '/product-category',
                         },
                         {
+                            label: 'Sub Category',
+                            icon: Layers,
+                            to: '/product-subcategory',
+                        },
+                        {
                             label: 'Brand',
                             icon: Trello,
                             to: '/brand',

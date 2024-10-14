@@ -65,6 +65,7 @@ import { useAddProductMutation } from '@/features/product/productAPI';
 import ImagePreview from '../ImagePreview';
 import { toast } from 'sonner';
 import BrandDropdown from '../dropdowns/brand-dropdown';
+import SubCategoryByCategory from '../dropdowns/subcategory-dropdown';
 type props = {
     selectedProducts: IAddProduct;
     productId: string;
@@ -309,6 +310,21 @@ const AddProductComponent = ({ selectedProducts, productId, isUpdate }: props) =
                                 {touched.categoryId && errors.categoryId ? (
                                     <small id="categoryId-help" className="text-rose-600">
                                         {errors.categoryId}
+                                    </small>
+                                ) : null}
+                            </div>
+                            <div className="flex flex-col space-y-1.5">
+                                <Label htmlFor="category">
+                                    Sub Category<sup className="text-rose-600">*</sup>
+                                </Label>
+                                <SubCategoryByCategory
+                                    onChange={handleChange}
+                                    categoryId={values?.categoryId}
+                                    subCategoryId={values?.subCategoryId}
+                                />
+                                {touched.subCategoryId && errors.subCategoryId ? (
+                                    <small id="subCategoryId-help" className="text-rose-600">
+                                        {errors.subCategoryId}
                                     </small>
                                 ) : null}
                             </div>

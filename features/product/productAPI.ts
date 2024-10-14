@@ -89,6 +89,13 @@ export const productApi = createApi({
             }),
             providesTags: ['Product'],
         }),
+        getSubCategoryByCategoryId: builder.query<any, string>({
+            query: (id) => ({
+                url: `/product/drop-down-by-catId/${id}`,
+                method: 'GET',
+            }),
+            providesTags: ['Product'],
+        }),
 
         // Mutation
         addProduct: builder.mutation<ApiResponse, IAddProduct>({
@@ -225,6 +232,7 @@ export const {
     useGetProductByIdQuery,
     useGetVariantProductByIdQuery,
     useGetVariantListByProductIdQuery,
+    useGetSubCategoryByCategoryIdQuery,
     useAddProductMutation,
     useEditProductMutation,
     useAddProductVariantMutation,

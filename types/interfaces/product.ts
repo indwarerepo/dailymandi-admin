@@ -1,6 +1,7 @@
 export interface Product {
     id: string;
     categoryId?: string;
+    subCategoryId?: string;
     brandId?: string;
     name: string;
     description: string;
@@ -16,6 +17,10 @@ export interface Product {
     createdAt?: Date | any;
     softDelete?: boolean;
     productCategory?: {
+        id: string;
+        name: string;
+    };
+    product_subcategory?: {
         id: string;
         name: string;
     };
@@ -69,6 +74,7 @@ export type IAddProduct = Pick<
     Product,
     | 'name'
     | 'categoryId'
+    | 'subCategoryId'
     | 'brandId'
     | 'manufacturer'
     | 'specification'
@@ -128,6 +134,7 @@ export type IEditProduct = Pick<
     | 'id'
     | 'name'
     | 'categoryId'
+    | 'subCategoryId'
     | 'brandId'
     | 'manufacturer'
     | 'specification'
