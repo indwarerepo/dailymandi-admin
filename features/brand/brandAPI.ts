@@ -3,7 +3,15 @@ import { createSlice } from '@reduxjs/toolkit';
 import { baseQueryWithAuthGuard } from '../utility';
 
 import { IPaginator } from '@/types/types';
-import { ApiResponse, IAddBrand, IBrand, IEditBrand, RGetBrandById, RGetBrandlist } from '@/types/interfaces/brand';
+import {
+    ApiResponse,
+    IAddBrand,
+    IBrand,
+    IEditBrand,
+    RBrandDD,
+    RGetBrandById,
+    RGetBrandlist,
+} from '@/types/interfaces/brand';
 
 export const brandApi = createApi({
     reducerPath: 'brandApi',
@@ -34,7 +42,7 @@ export const brandApi = createApi({
             providesTags: ['Brand'],
         }),
 
-        getAllBrandDropdownlist: builder.query<any, void>({
+        getAllBrandDropdownlist: builder.query<RBrandDD, void>({
             query: () => {
                 return {
                     url: `/product-brand/drop-down`,
@@ -76,7 +84,7 @@ export const brandApi = createApi({
             invalidatesTags: ['Brand'],
         }),
 
-        deleteBrand: builder.mutation<any, string>({
+        deleteBrand: builder.mutation<RGetBrandlist, string>({
             query: (id) => ({
                 url: `/product-brand/${id}`,
                 method: 'DELETE',

@@ -124,7 +124,7 @@ const ViewCustomer: React.FC<DetailProps> = ({
                             <TabsTrigger value="address">Address</TabsTrigger>
                             <TabsTrigger value="account-detail">Acount Detail</TabsTrigger>
                             <TabsTrigger value="wallet">Wallet</TabsTrigger>
-                            <TabsTrigger value="incentive">Incentive</TabsTrigger>
+                            <TabsTrigger value="incentive">Transactions</TabsTrigger>
                         </TabsList>
                         <TabsContent value="address">
                             <Accordion type="single" collapsible className="w-full" defaultValue="item-0">

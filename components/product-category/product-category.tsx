@@ -189,7 +189,7 @@ export const CategoryColumns: ColumnDef<ProductCategory>[] = [
                                 <TooltipContent>Edit</TooltipContent>
                             </Tooltip>
                         </TooltipProvider>
-
+                        |
                         <TooltipProvider>
                             <Tooltip>
                                 <TooltipTrigger asChild>

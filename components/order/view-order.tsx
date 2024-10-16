@@ -249,7 +249,14 @@ const ViewOrder: React.FC<DetailProps> = ({ orderData }: DetailProps) => {
                                                 <TableCell>
                                                     {' '}
                                                     <p className="font-normal mb-1 text-xs sm:text-sm text-center flex items-center justify-start">
-                                                        {detail?.product?.name || 'N/A'}
+                                                        {detail?.product?.name || 'N/A'}{' '}
+                                                        {detail?.order_status === '1' ? (
+                                                            <b style={{ color: 'red' }}> [Returned]</b>
+                                                        ) : detail?.order_status === '0' ? (
+                                                            ' '
+                                                        ) : (
+                                                            ''
+                                                        )}
                                                     </p>
                                                 </TableCell>
                                                 <TableCell>

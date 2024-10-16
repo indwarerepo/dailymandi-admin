@@ -41,3 +41,7 @@ export type IEditDriver = Pick<
 >;
 
 export type IEditActiveStatus = Pick<IDriver, 'id'>;
+
+export type RDriverDD = Pick<ApiResponse, 'statusCode' | 'message'> & {
+    data: { id: string; name: string }[];
+};

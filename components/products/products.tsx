@@ -463,16 +463,16 @@ export const ProductColumns: ColumnDef<Product>[] = [
                                 <TooltipContent>Edit</TooltipContent>
                             </Tooltip>
                         </TooltipProvider>
-                        |
-                        <TooltipProvider>
+
+                        {/* <TooltipProvider>
                             <Tooltip>
                                 <TooltipTrigger asChild>
-                                    {/* <Trash size={18} /> */}
+                                    
                                     <DeleteAlert id="" />
                                 </TooltipTrigger>
                                 <TooltipContent>Delete</TooltipContent>
                             </Tooltip>
-                        </TooltipProvider>
+                        </TooltipProvider> */}
                         {/* </Link> */}
                     </div>
                 </React.Fragment>

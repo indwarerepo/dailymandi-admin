@@ -61,7 +61,7 @@ const AddEditComponent = ({ selectedCMSs, setSelectedCMSs, thisId, isUpdate }: p
                     cmsKey: values.cmsKey as string,
                     description: values.description as string,
                     url: values.url as string,
-                    icon: values.icon as string,
+                    // icon: values.icon as string,
                     metaTitle: values.metaTitle as string,
                     metaDescription: values.metaDescription as string,
                 };
@@ -185,7 +185,7 @@ const AddEditComponent = ({ selectedCMSs, setSelectedCMSs, thisId, isUpdate }: p
                                 ) : null}
                             </div>
 
-                            <div className="flex flex-col space-y-1.5">
+                            {/* <div className="flex flex-col space-y-1.5">
                                 <Label htmlFor="icon">Icon</Label>
                                 <Input
                                     name="icon"
@@ -201,7 +201,7 @@ const AddEditComponent = ({ selectedCMSs, setSelectedCMSs, thisId, isUpdate }: p
                                         {errors.icon}
                                     </small>
                                 ) : null}
-                            </div>
+                            </div> */}
                             <div className="flex flex-col space-y-1.5">
                                 <Label htmlFor="url">
                                     URL<sup className="text-rose-600">*</sup>

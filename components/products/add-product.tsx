@@ -464,11 +464,11 @@ const AddProductComponent = ({ selectedProducts, productId, isUpdate }: props) =
                             </div>
                             {/* Manufacturer */}
                             <div className="col-span-1 flex flex-col space-y-1.5">
-                                <Label htmlFor="manufacturer">Mfg. Date</Label>
+                                <Label htmlFor="manufacturer">Manufacturer</Label>
                                 <Textarea
                                     id="manufacturer"
                                     name="manufacturer"
-                                    placeholder="Mfg. Date"
+                                    placeholder="Manufacturer"
                                     value={values?.manufacturer}
                                     onChange={handleChange}
                                     onBlur={handleBlur}
@@ -914,7 +914,7 @@ const AddProductComponent = ({ selectedProducts, productId, isUpdate }: props) =
                                     </Popover>
                                 </div>
                                 {/* Remarks */}
-                                <div className="sm:col-span-2 flex flex-col space-y-1.5">
+                                {/* <div className="sm:col-span-2 flex flex-col space-y-1.5">
                                     <Label htmlFor={`productVariant.${index}.remarks`}>
                                         Remarks<sup className="text-rose-600">*</sup>
                                     </Label>
@@ -933,7 +933,7 @@ const AddProductComponent = ({ selectedProducts, productId, isUpdate }: props) =
                                     touched.productVariant[index]?.remarks ? (
                                         <div className="text-red-600">{errors.productVariant[index]?.remarks}</div>
                                     ) : null}
-                                </div>
+                                </div> */}
                                 {/* Upload Image */}
                                 <div className="flex flex-col sm:col-span-2 space-y-1.5">
                                     <Label
@@ -1042,7 +1042,7 @@ const AddProductComponent = ({ selectedProducts, productId, isUpdate }: props) =
                                         isReturnable: false,
                                         returnDaysLimit: 0,
                                         batchNo: '',
-                                        remarks: '',
+                                        // remarks: '',
                                         manufacturingDate: new Date(),
                                         expiryDate: new Date(),
                                         // productVariantImage: '',

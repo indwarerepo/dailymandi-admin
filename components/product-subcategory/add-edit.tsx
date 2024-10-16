@@ -26,6 +26,7 @@ import {
 } from '@/features/productSubcategory/productSubcategoryAPI';
 
 import ProductCategoryDropdown from '@/components/dropdowns/category-dropdown';
+import { productSubCategorySchema } from '@/types/schemas';
 
 type props = {
     selectedProducts: ProductSubCategory;
@@ -45,7 +46,7 @@ const AddEditComponent = ({ selectedProducts, setSelectedProducts, thisId, isUpd
     // Form handling & validation using formik & yup schemas
     const { values, errors, touched, handleBlur, handleChange, handleSubmit, setFieldValue } = useFormik({
         initialValues: selectedProducts,
-        // validationSchema: productSubCategorySchema,
+        validationSchema: productSubCategorySchema,
         validateOnChange: true,
         validateOnBlur: false,
         enableReinitialize: true,

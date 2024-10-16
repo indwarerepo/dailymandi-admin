@@ -17,10 +17,15 @@ export interface IOrder {
     deliveryPincode: string;
     deliveryState: string;
     deliveryCity: string;
+    driverAccepted?: boolean;
     createdAt?: Date | any;
     order_status?: {
         id: string;
         statusTitle: string;
+    };
+    driver?: {
+        id: string;
+        name: string;
     };
     users?: {
         id: string;
@@ -30,6 +35,15 @@ export interface IOrder {
         image: string;
     };
     orderDetails?: OrderDetails[];
+    driverStatus?: string;
+    pinCodeDetails?: {
+        id: string;
+        zoneId: string;
+        zone?: {
+            id: string;
+            zoneName: string;
+        };
+    };
 }
 
 export type OrderDetails = {
@@ -42,7 +56,7 @@ export type OrderDetails = {
     product?: {
         id: string;
         name: string;
-        productImage: [];
+        productImage: string;
     };
     product_variant?: {
         id: string;

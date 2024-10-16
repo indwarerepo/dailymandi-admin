@@ -470,7 +470,7 @@ const AddEditVariantComponent = ({ selectedVariants, variantId, productId, isUpd
                                 </Popover>
                             </div>
                             {/* Remarks */}
-                            <div className="flex sm:col-span-2 flex-col space-y-1.5">
+                            {/* <div className="flex sm:col-span-2 flex-col space-y-1.5">
                                 <Label htmlFor="remarks">
                                     Remarks<sup className="text-rose-600">*</sup>
                                 </Label>
@@ -481,7 +481,7 @@ const AddEditVariantComponent = ({ selectedVariants, variantId, productId, isUpd
                                     onBlur={handleBlur}
                                     className="cstheight sm:h-10 border-borderColor focus:border-borderColor bg-card outline-none "
                                 />
-                            </div>
+                            </div> */}
                             {/* Upload Image */}
                             <div className="flex sm:col-span-2 flex-col space-y-1.5">
                                 <Label

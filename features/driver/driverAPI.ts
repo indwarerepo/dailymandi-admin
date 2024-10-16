@@ -10,6 +10,7 @@ import {
     IAddDriver,
     IEditDriver,
     IEditActiveStatus,
+    RDriverDD,
 } from '@/types/interfaces/driver';
 import { IPaginator } from '@/types/types';
 
@@ -43,7 +44,7 @@ export const driverApi = createApi({
             providesTags: ['Driver'],
         }),
 
-        getAllDriversDropdownlist: builder.query<any, void>({
+        getAllDriversDropdownlist: builder.query<RDriverDD, void>({
             query: () => {
                 return {
                     url: `/driver/drop-down`,

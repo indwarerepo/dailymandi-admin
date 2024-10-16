@@ -26,3 +26,7 @@ export type RGetBrandById = Pick<ApiResponse, 'message' | 'statusCode'> & {
 export type IAddBrand = Pick<IBrand, 'name' | 'description' | 'metaTitle' | 'metaDescription'>;
 export type IEditBrand = Pick<IBrand, 'id' | 'name' | 'description' | 'metaTitle' | 'metaDescription'>;
 export type IEditActiveStatus = Pick<IBrand, 'id'>;
+
+export type RBrandDD = Pick<ApiResponse, 'statusCode' | 'message'> & {
+    data: { id: string; name: string }[];
+};

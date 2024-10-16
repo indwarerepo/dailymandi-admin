@@ -2,6 +2,7 @@ import { createApi } from '@reduxjs/toolkit/query/react';
 import { createSlice } from '@reduxjs/toolkit';
 import { baseQueryWithAuthGuard } from '../utility';
 import { IPaginator } from '@/types/types';
+import { IOrder, RGetOrderDetailsById, RGetOrderlist } from '@/types/interfaces/order';
 
 export const orderApi = createApi({
     reducerPath: 'orderApi',
@@ -9,7 +10,7 @@ export const orderApi = createApi({
     tagTypes: ['Order'],
     endpoints: (builder) => ({
         // Queries
-        getAllOrderslist: builder.query<any, IPaginator>({
+        getAllOrderslist: builder.query<RGetOrderlist, IPaginator>({
             query: (params) => {
                 const { pageIndex, pageSize, sortBy, sortOrder, filters } = params;
                 const replacer = (_key: any, value: any) => {
@@ -32,7 +33,7 @@ export const orderApi = createApi({
             providesTags: ['Order'],
         }),
 
-        getOrderById: builder.query<any, string>({
+        getOrderById: builder.query<RGetOrderDetailsById, string>({
             query: (id) => ({
                 url: `/order/admin/${id}`,
                 method: 'GET',
@@ -64,7 +65,7 @@ interface InitialState {
     status?: String | null;
     loading?: Boolean;
     error?: Boolean;
-    orderList?: any[];
+    orderList?: IOrder[];
 }
 const initialState: InitialState = {
     status: null,

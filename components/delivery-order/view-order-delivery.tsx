@@ -50,9 +50,9 @@ const ViewOrderDeliveryComponent: React.FC<DetailProps> = ({ orderData }: Detail
 
     // Initialize checkedItems to have all products checked by default
     useEffect(() => {
-        if (orderData?.orderDetails) {
+        if (orderData?.orderDetails && orderData?.order_status?.statusTitle === 'Out for Delivery') {
             const initialCheckedItems = orderData.orderDetails.reduce((acc: any, detail: any) => {
-                acc[detail.product.id] = true; // Mark all products as checked
+                acc[detail.product_variant.id] = true; // Mark all products as checked
                 return acc;
             }, {});
             setCheckedItems(initialCheckedItems);
@@ -98,7 +98,9 @@ const ViewOrderDeliveryComponent: React.FC<DetailProps> = ({ orderData }: Detail
 
     // Calculate new dueAmount based on unchecked products
     const calculateNewDueAmount = () => {
-        const uncheckedProducts = orderData?.orderDetails.filter((detail: any) => !checkedItems[detail.product.id]);
+        const uncheckedProducts = orderData?.orderDetails.filter(
+            (detail: any) => !checkedItems[detail.product_variant.id],
+        );
 
         const totalUncheckedOriginalPrice = uncheckedProducts.reduce(
             (total: number, product: any) => total + parseFloat(product?.orderPrice) * parseFloat(product?.quantity),
@@ -134,8 +136,8 @@ const ViewOrderDeliveryComponent: React.FC<DetailProps> = ({ orderData }: Detail
             return;
         }
         const uncheckedProductIds = orderData?.orderDetails
-            .filter((detail: any) => !checkedItems[detail?.product?.id])
-            .map((detail: any) => detail?.product?.id);
+            .filter((detail: any) => !checkedItems[detail?.product_variant?.id])
+            .map((detail: any) => detail?.product_variant?.id);
         const newDueAmount = calculateNewDueAmount();
         let final = { uncheckedProductIds, deliveryAmt: orderData?.deliveryAmt, totalAmt: orderData?.orderTotal };
         console.log('🚀 ~ handleButtonClick ~ final:', final);
@@ -499,13 +501,22 @@ const ViewOrderDeliveryComponent: React.FC<DetailProps> = ({ orderData }: Detail
                                                     id={`checkbox-${detailIndex}`}
                                                     name={`checkbox-${detailIndex}`}
                                                     className="check"
-                                                    checked={!!checkedItems[detail.product.id]}
+                                                    checked={!!checkedItems[detail.product_variant.id]}
                                                     onCheckedChange={(checked: boolean) =>
-                                                        handleCheckboxChange(detail.product.id, checked)
+                                                        handleCheckboxChange(detail.product_variant.id, checked)
                                                     }
                                                 />
                                             </div>
-                                            <div>{detail?.product?.name || 'N/A'}</div>
+                                            <div>
+                                                {detail?.product?.name || 'N/A'}{' '}
+                                                {detail?.order_status === '1' ? (
+                                                    <b style={{ color: 'red' }}> [Returned]</b>
+                                                ) : detail?.order_status === '0' ? (
+                                                    ' '
+                                                ) : (
+                                                    ''
+                                                )}
+                                            </div>
                                             <div
                                                 onClick={() => {
                                                     setSelectedImage(detail?.product?.productImage);

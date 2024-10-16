@@ -21,6 +21,8 @@ export const productSchema = Yup.object({
     description: Yup.string().required('Please enter the product description'),
     productImage: Yup.string().required('Product Image is required'),
     categoryId: Yup.string().required('Please select a category'),
+    subCategoryId: Yup.string().required('Please select a sub category'),
+    brandId: Yup.string().required('Please select a brand'),
     paymentTerm: Yup.string().required('Payment Term is required'),
     warrantyPolicy: Yup.string().required('Warranty Policy is required'),
     isFeatured: Yup.boolean(),
@@ -42,7 +44,7 @@ export const productSchema = Yup.object({
                 .required('Return Days Limit is required')
                 .min(0, 'Return Days Limit must be at least 0'),
             batchNo: Yup.string().required('Batch No is required'),
-            remarks: Yup.string(),
+            // remarks: Yup.string(),
             manufacturingDate: Yup.date().required('Manufacturing Date is required'),
             expiryDate: Yup.date().required('Expiry Date is required'),
             productVariantImage: Yup.array()
@@ -107,6 +109,16 @@ export const productCategorySchema = Yup.object({
         .typeError(`Display order must be a number`)
         .required(`Please enter the display order`)
         .moreThan(0, 'Display order must be greater than zero'),
+});
+
+export const productSubCategorySchema = Yup.object({
+    name: Yup.string()
+        .required(`Please enter the category name`)
+        .test('not-only-spaces', 'Category name cannot be only spaces', (value) => value.trim().length > 0),
+    categoryId: Yup.string().required('Please select a category'),
+    metaTitle: Yup.string()
+        .required(`Please enter meta title`)
+        .test('not-only-spaces', 'Meta title cannot be only spaces', (value) => value.trim().length > 0),
 });
 
 export const driverAddSchema = Yup.object({

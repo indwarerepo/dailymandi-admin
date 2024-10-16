@@ -26,6 +26,7 @@ import { Textarea } from '../ui/textarea';
 import { ICoupon } from '@/types/interfaces/coupon';
 import { couponSchema } from '@/types/schemas';
 import { useAddCouponMutation, useEditCouponMutation } from '@/features/coupon/couponAPI';
+import { startOfDay, formatISO } from 'date-fns';
 
 type props = {
     selectedCoupons: ICoupon;
@@ -52,6 +53,8 @@ const AddEditComponent = ({ selectedCoupons, setSelectedCoupons, thisId, isUpdat
             console.log('🚀 ~ onSubmit: ~ values:', values);
             setIsLoading(true);
             setSelectedCoupons(values);
+            const adjustedStartDate = formatISO(startOfDay(values.startDate), { representation: 'date' });
+            const adjustedExpiredDate = formatISO(startOfDay(values.expiredDate), { representation: 'date' });
 
             try {
                 let payload: any = {
@@ -61,8 +64,8 @@ const AddEditComponent = ({ selectedCoupons, setSelectedCoupons, thisId, isUpdat
                     offerPercentage: values.offerPercentage as number,
                     couponValidity: values.couponValidity as number,
                     useLimit: values.useLimit as number,
-                    startDate: values.startDate as Date,
-                    expiredDate: values.expiredDate as Date,
+                    startDate: adjustedStartDate as string,
+                    expiredDate: adjustedExpiredDate as string,
                     policy: values.policy as string,
                     description: values.description as string,
                 };
