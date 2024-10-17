@@ -54,7 +54,7 @@ const initialVariants = {
     isReturnable: false,
     returnDaysLimit: 0,
     batchNo: '',
-    remarks: '',
+    // remarks: '',
     manufacturingDate: new Date(),
     expiryDate: new Date(),
     productVariantImage: [],
@@ -99,7 +99,7 @@ const VariantIndex = () => {
                 isReturnable: productVariantData?.data?.isReturnable ?? false,
                 returnDaysLimit: productVariantData?.data?.returnDaysLimit ?? 0,
                 batchNo: productVariantData?.data?.batchNo ?? '',
-                remarks: productVariantData?.data?.remarks ?? '',
+                // remarks: productVariantData?.data?.remarks ?? '',
 
                 productVariantImage: [],
                 // ...productVariantData?.data,

@@ -145,11 +145,7 @@ export const CustomerColumns: ColumnDef<ICustomer>[] = [
         accessorKey: 'referralCode',
         header: ({ column }) => {
             return (
-                <Button
-                    variant="ghost"
-                    onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
-                    className="w-full items-center justify-center"
-                >
+                <Button variant="ghost" className="w-full items-center justify-center  pointer-events-none">
                     Referral Code
                 </Button>
             );
@@ -160,11 +156,7 @@ export const CustomerColumns: ColumnDef<ICustomer>[] = [
         accessorKey: 'referredBy',
         header: ({ column }) => {
             return (
-                <Button
-                    variant="ghost"
-                    onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
-                    className="w-full items-center justify-center"
-                >
+                <Button variant="ghost" className="w-full items-center justify-center  pointer-events-none">
                     Referred By
                 </Button>
             );

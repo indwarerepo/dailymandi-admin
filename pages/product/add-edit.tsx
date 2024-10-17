@@ -27,7 +27,7 @@ const initialProduct: Product = {
         returnDaysLimit: 0,
         productImage: '',
         batchNo: '',
-        remarks: '',
+        // remarks: '',
     },
     categoryId: '',
     productAttributes: '',

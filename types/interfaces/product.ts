@@ -51,7 +51,7 @@ export interface ProductVariant {
     returnDaysLimit: number;
     productImage?: string;
     batchNo: string;
-    remarks: string;
+    // remarks: string;
     manufacturingDate?: Date | any;
     expiryDate?: Date | any;
     productVariantImage?: string[];
@@ -126,7 +126,7 @@ export type IAddProductVariant = Pick<
     | 'batchNo'
     | 'manufacturingDate'
     | 'expiryDate'
-    | 'remarks'
+    // | 'remarks'
     | 'productVariantImage'
 >;
 export type IEditProduct = Pick<

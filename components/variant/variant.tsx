@@ -96,7 +96,7 @@ export const VariantColumns: ColumnDef<IVariant>[] = [
         accessorKey: 'id',
         header: ({ column }) => {
             return (
-                <Button variant="ghost" className="w-full items-center justify-center">
+                <Button variant="ghost" className="w-full items-center justify-center pointer-events-none">
                     Action
                 </Button>
             );

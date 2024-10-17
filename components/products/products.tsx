@@ -150,11 +150,7 @@ export const ProductColumns: ColumnDef<Product>[] = [
         accessorKey: 'productImage',
         header: ({ column }) => {
             return (
-                <Button
-                    variant="ghost"
-                    onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
-                    className="w-full items-start justify-start"
-                >
+                <Button variant="ghost" className="w-full items-start justify-start  pointer-events-none">
                     Image
                 </Button>
             );

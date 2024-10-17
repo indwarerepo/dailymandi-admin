@@ -88,7 +88,7 @@ const initialProducts = {
             isReturnable: false,
             returnDaysLimit: 0,
             batchNo: '',
-            remarks: '',
+            // remarks: '',
             manufacturingDate: new Date(),
             expiryDate: new Date(),
             productVariantImage: [],

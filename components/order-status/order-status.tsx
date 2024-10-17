@@ -93,18 +93,14 @@ export const OrderStatusColumns: ColumnDef<IOrderStatus>[] = [
     },
     {
         accessorKey: 'id',
-        // header: ({ column }) => {
-        //     return (
-        //         <Button
-        //             variant="ghost"
-        //             onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
-        //             className="w-full flex items-center justify-center"
-        //         >
-        //             Action
-        //         </Button>
-        //     );
-        // },
-        header: 'Action',
+        header: ({ column }) => {
+            return (
+                <Button variant="ghost" className="w-full items-center justify-center pointer-events-none">
+                    Action
+                </Button>
+            );
+        },
+
         cell: ({ row }) => {
             // eslint-disable-next-line react-hooks/rules-of-hooks
             const router = useRouter();

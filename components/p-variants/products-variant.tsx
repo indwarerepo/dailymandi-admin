@@ -394,7 +394,7 @@ export const VariantColumns: ColumnDef<any>[] = [
                 <Button
                     variant="ghost"
                     onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
-                    className="w-full items-center justify-center"
+                    className="w-full items-center justify-center pointer-events-none"
                 >
                     Action
                 </Button>

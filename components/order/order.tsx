@@ -377,16 +377,12 @@ export const orderColumns: ColumnDef<any>[] = [
         accessorKey: 'id',
         header: ({ column }) => {
             return (
-                <Button
-                    variant="ghost"
-                    onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
-                    className="w-full items-start justify-start"
-                >
+                <Button variant="ghost" className="w-full items-start justify-start  c">
                     Customer
                 </Button>
             );
         },
-        cell: ({ row }) => <div className="text-sm text-center capitalize">{row?.original?.users?.name}</div>,
+        cell: ({ row }) => <div className="text-sm text-start capitalize">{row?.original?.users?.name}</div>,
     },
 
     {
@@ -411,11 +407,7 @@ export const orderColumns: ColumnDef<any>[] = [
         id: 'assignDriver',
         header: ({ column }) => {
             return (
-                <Button
-                    variant="ghost"
-                    onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
-                    className="w-full items-center justify-center"
-                >
+                <Button variant="ghost" className="w-full items-center justify-center  pointer-events-none">
                     Assign Driver
                 </Button>
             );
@@ -475,20 +467,15 @@ export const orderColumns: ColumnDef<any>[] = [
         },
     },
     {
-        // accessorKey: 'action',
-        id: 'action',
+        accessorKey: 'id',
         header: ({ column }) => {
             return (
-                <Button
-                    variant="ghost"
-                    onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
-                    className="w-full items-center justify-center"
-                >
+                <Button variant="ghost" className="w-full items-center justify-center pointer-events-none">
                     Action
-                    <ArrowUpDown className="ml-2 h-4 w-4" />
                 </Button>
             );
         },
+
         cell: ({ row }) => {
             // const id = row.original._id ?? '';
             // eslint-disable-next-line react-hooks/rules-of-hooks
